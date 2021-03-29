@@ -13,3 +13,7 @@ Currently the basic game is JIT compiled using numba. These are the performance 
 As you can see, the first run of the JITed version takes a considerable length of time, but afterwards the performance is just stellar (only requires 5% of the time). This is a twenty-fold improvement.
 
 This means, that after approximately 1350 runs, the JITed version has broken even, and after 10000 iterations, about 22 seconds will be saved (the JITed version will take just about 4.7s, while the pure python one takes 27s).
+
+# Q-Learning
+
+The file `ml.py` holds a very rough-around-the-edges q-learning approach. I've developed this code during a course at my uni, it is far from perfect. In order to make full use of numba, and allow for full multiprocessing later on, I removed all classes and am just operating on numba types such as dicts and lists. This code, compared to the old, performs around 30 times faster. The initial run including compilation is about as quick as one run in standard python (both around 8 seconds).
